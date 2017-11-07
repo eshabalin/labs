@@ -2,40 +2,40 @@
 
 $text = "Testovajastroka";
 
-$n = 5;//сторона квадрата
-$r = round($n/2);//количество кругов по спирали
-$s = 0;//порядковый номер в массиве тестовой строки
+$n = 5;//Г±ГІГ®Г°Г®Г­Г  ГЄГўГ Г¤Г°Г ГІГ 
+$r = round($n/2);//ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГЄГ°ГіГЈГ®Гў ГЇГ® Г±ГЇГЁГ°Г Г«ГЁ
+$s = 0;//ГЇГ®Г°ГїГ¤ГЄГ®ГўГ»Г© Г­Г®Г¬ГҐГ° Гў Г¬Г Г±Г±ГЁГўГҐ ГІГҐГ±ГІГ®ГўГ®Г© Г±ГІГ°Г®ГЄГЁ
 
 for ($k = 1; $k <= $r; $k++)
 {
-	for ($stolb = $k; $stolb <= $n-$k+1; $stolb++)//верхняя строка
+	for ($leftStolb = $k; $leftStolb <= $n-$k+1; $leftStolb++)//ГўГҐГ°ГµГ­ГїГї Г±ГІГ°Г®ГЄГ 
 	{	if ($text[$s])
-		{$table[$k][$stolb] = $text[$s];
+		{$table[$k][$leftStolb] = $text[$s];
 		$s++;}
-		else {$table[$k][$stolb] = "";}
+		else {$table[$k][$leftStolb] = "";}
 	}
-	for ($str = $k+1; $str <= $n-$k+1; $str++)//правая сторона
+	for ($upStr = $k+1; $upStr <= $n-$k+1; $upStr++)//ГЇГ°Г ГўГ Гї Г±ГІГ®Г°Г®Г­Г 
 	{	if ($text[$s])
-		{$table[$str][$n-$k+1] = $text[$s];
+		{$table[$upStr][$n-$k+1] = $text[$s];
 		$s++;}
-		else {$table[$str][$n-$k+1] = "";}
+		else {$table[$upStr][$n-$k+1] = "";}
 	}
-	for ($stolb = $n-$k; $stolb >= $k; $stolb--)//нижняя строка
+	for ($rightStolb = $n-$k; $rightStolb >= $k; $rightStolb--)//Г­ГЁГ¦Г­ГїГї Г±ГІГ°Г®ГЄГ 
 	{
 		if ($text[$s])
-		{$table[$n-$k+1][$stolb] = $text[$s];
+		{$table[$n-$k+1][$rightStolb] = $text[$s];
 		$s++;}
-		else {$table[$n-$k+1][$stolb] = "";}
+		else {$table[$n-$k+1][$rightStolb] = "";}
 	}
-	for ($str = $n-$k; $str >= $k+1; $str--)//левая сторона
+	for ($downStr = $n-$k; $downStr >= $k+1; $dowsnStr--)//Г«ГҐГўГ Гї Г±ГІГ®Г°Г®Г­Г 
 	{	
 		if ($text[$s])
-		{$table[$str][$k] = $text[$s];
+		{$table[$downStr][$k] = $text[$s];
 		$s++;}
-		else {$table[$str][$k] = "";}
+		else {$table[$downStr][$k] = "";}
 	}	
 }
-echo '<table>';//вывод на печать
+echo '<table>';//ГўГ»ГўГ®Г¤ Г­Г  ГЇГҐГ·Г ГІГј
 for ($tr= 1; $tr <= $n; $tr++)
 {echo '<tr>';
 	for ($td = 1; $td <= $n; $td++) 
