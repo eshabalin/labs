@@ -5,7 +5,7 @@ print_r(searchAnagram($word));
 function searchAnagram($word) {
     $anagrams = []; 
     $sortWord = sortWord($word);
-    $file = file('words.txt'); //чтение файла в массив
+    $file = file('words.txt'); //С‡С‚РµРЅРёРµ С„Р°Р№Р»Р° РІ РјР°СЃСЃРёРІ
     for ($i = 0; $i < count($file); $i++) {
         $fileWord = $file[$i];
         $sortFileWord = sortWord($fileWord); 
